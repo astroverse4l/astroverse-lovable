@@ -104,7 +104,7 @@ const Index = () => {
         'Spacecraft textiles incorporate recycled materials from space industry waste',
         'Our programmable color-changing technology uses 80% less energy than previous generations'
       ],
-      vision2030: 'By 2030, Spacecraft will transform clothing from static items to dynamic personal ecosystems that adapt to the wearer's needs while maintaining zero environmental impact throughout the product lifecycle.'
+      vision2030: "By 2030, Spacecraft will transform clothing from static items to dynamic personal ecosystems that adapt to the wearer's needs while maintaining zero environmental impact throughout the product lifecycle."
     },
     {
       id: 'web3',

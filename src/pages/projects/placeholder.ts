@@ -8,7 +8,7 @@ export const AstralStudiosProps = {
   subtitle: "3D design and architectural visualization services",
   description: "Astral Studios pushes the boundaries of spatial design through advanced 3D modeling, rendering, and visualization technologies. Our interdisciplinary team combines artistic vision with technical expertise to create breathtaking digital environments and architectural concepts.",
   coverImage: "/public/lovable-uploads/0081bfec-f662-43e2-a11c-7dd04c52474e.png",
-  icon: <Layers className="h-8 w-8 text-white" />,
+  icon: Layers,
   features: [
     "Real-time rendering engine that simulates physics with zero latency",
     "Virtual reality architectural walkthroughs for immersive client presentations",
@@ -73,7 +73,7 @@ export const SpacecraftProps = {
   subtitle: "Futuristic fashion inspired by cosmic aesthetics",
   description: "Spacecraft merges cutting-edge textile technology with space-inspired design to create wearable art that transcends traditional fashion boundaries. Our adaptive fabrics and innovative manufacturing processes result in garments that respond to the wearer and their environment.",
   coverImage: "/public/lovable-uploads/8521ca11-d929-479f-aba7-92cb28897432.png",
-  icon: <Triangle className="h-8 w-8 text-white" />,
+  icon: Triangle,
   features: [
     "Adaptive fabrics that respond to environmental conditions and wearer preferences",
     "Programmable color-changing textiles using microscale light-reflecting elements",
@@ -139,7 +139,7 @@ export const LunexProps = {
   description: "Lunex offers institutional-grade security with consumer-friendly interfaces for cryptocurrency management. Our platform provides seamless trading, staking, and portfolio management while maintaining absolute control over private keys and digital assets.",
   coverImage: "/public/lovable-uploads/64deced2-a936-4cd3-b3b7-fe15ecb1e467.png",
   logo: "/public/lovable-uploads/570f303b-d79c-4529-a73a-39e849d88dc4.png",
-  icon: <Star className="h-8 w-8 text-white" />,
+  icon: Star,
   features: [
     "Military-grade encryption and multi-signature security for all user assets",
     "Decentralized exchange with deep liquidity pools across multiple blockchains",
@@ -204,7 +204,7 @@ export const AetherProps = {
   subtitle: "Advanced cryptocurrency management system",
   description: "Aether is a next-generation cryptocurrency wallet designed for maximum security and usability. Built on quantum-resistant cryptography with intuitive interfaces, Aether makes managing digital assets simple while providing institutional-grade protection.",
   coverImage: "/public/lovable-uploads/064deced2-a936-4cd3-b3b7-fe15ecb1e467.png",
-  icon: <Atom className="h-8 w-8 text-white" />,
+  icon: Atom,
   features: [
     "Quantum-resistant encryption protecting against future computational threats",
     "Biometric multi-factor authentication with behavioral analysis",
@@ -270,7 +270,7 @@ export const SyntrilProps = {
   description: "Syntril revolutionizes global connectivity through advanced eSIM technology and satellite integration. Our platform provides seamless internet access anywhere on the planet with innovative pricing models that make global connectivity affordable for everyone.",
   coverImage: "/public/lovable-uploads/b0f8e6a2-414c-49c9-b973-11e3f6c93df5.png",
   logo: "/public/lovable-uploads/176de78f-b8be-402e-b1cf-72707a84b25a.png",
-  icon: <Satellite className="h-8 w-8 text-white" />,
+  icon: Satellite,
   features: [
     "Instant activation eSIM profiles for 195+ countries and territories",
     "Satellite connectivity fallback in remote and underserved regions",
@@ -336,7 +336,7 @@ export const TarsNetProps = {
   description: "TarsNet delivers next-generation connectivity through a revolutionary combination of ground-based infrastructure and low-orbit satellites. Our technology provides lightning-fast internet with minimal latency anywhere on Earth, enabling new possibilities for remote work, gaming, and IoT applications.",
   coverImage: "/public/lovable-uploads/071bde78-c428-4001-a95e-b9ec132f9119.png",
   logo: "/public/lovable-uploads/f2adb176-2cca-441e-855f-ffab4caf920f.png",
-  icon: <Satellite className="h-8 w-8 text-white" />,
+  icon: Satellite,
   features: [
     "Sub-20ms latency through optimized routing and low-orbit satellite constellation",
     "Edge computing integration for local processing of time-sensitive applications",
@@ -402,7 +402,7 @@ export const AstoriumProps = {
   description: "Astorium is the native digital currency of the Astroverse ecosystem, facilitating seamless value exchange across all platform services. Built on a unique consensus mechanism that combines security, scalability, and energy efficiency, Astorium enables microtransactions, governance, and rewards across the entire ecosystem.",
   coverImage: "/public/lovable-uploads/e77a0b26-350e-47c6-85f3-0be2da5f2593.png",
   logo: "/public/lovable-uploads/54c19d36-37f1-4702-b358-e73b4df0f8b9.png",
-  icon: <Rocket className="h-8 w-8 text-white" />,
+  icon: Rocket,
   features: [
     "Asynchronous Byzantine Fault Tolerance consensus mechanism for security and efficiency",
     "Cross-chain operability with all major blockchain ecosystems through atomic swaps",
