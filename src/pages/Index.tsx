@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -9,6 +10,8 @@ import {
 } from 'lucide-react';
 import ParallaxEffect from '@/components/effects/ParallaxEffect';
 import ExplosionEffect from '@/components/effects/ExplosionEffect';
+import SlideSection from '@/components/sections/SlideSection';
+import '../styles/slideSection.css';
 
 const Index = () => {
   const { t } = useTranslation();
@@ -19,7 +22,136 @@ const Index = () => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.5;
     }
+
+    // Add CSS to body for smooth scrolling
+    document.body.style.scrollBehavior = 'smooth';
+    
+    return () => {
+      document.body.style.scrollBehavior = '';
+    };
   }, []);
+
+  const projectSlides = [
+    {
+      id: 'retrotech',
+      title: 'RetroTech',
+      description: t('tech_description'),
+      icon: <Rocket className="h-8 w-8 text-white" />,
+      linkPath: '/retrotech',
+      externalUrl: 'https://retro-tech-ast.vercel.app',
+      logoUrl: '/public/lovable-uploads/e7bedbc5-9dc9-4797-a6cd-5feb5319b5f0.png',
+      backgroundImageUrl: '/public/lovable-uploads/c9cd2b0a-6a28-486d-9845-6491ffd2f47a.png',
+      facts: [
+        'Our quantum processors achieve computational speeds 200x faster than traditional systems',
+        'RetroTech neural networks can adapt to new data patterns without retraining',
+        'Our RetroSafe™ security protocol has never been breached in independent testing'
+      ],
+      vision2030: 'By 2030, RetroTech aims to democratize quantum computing, making it accessible to researchers and businesses of all sizes while pioneering new standards in AI ethics and responsible innovation.'
+    },
+    {
+      id: 'echoe',
+      title: 'Echoe-2077',
+      description: t('gaming_description'),
+      icon: <Globe className="h-8 w-8 text-white" />,
+      linkPath: '/echoe',
+      backgroundImageUrl: '/public/lovable-uploads/912d57fb-fe1b-40c8-bc43-d6ca85898211.png',
+      facts: [
+        'Our neural feedback system creates sensations that 92% of users describe as "indistinguishable from reality"',
+        'Echoe-2077 worlds continue to evolve even when players are offline',
+        'Our AI NPCs have passed modified Turing tests in controlled studies'
+      ],
+      vision2030: 'By 2030, Echoe-2077 will blur the boundaries between virtual and physical reality, creating immersive worlds that respond to thought and emotion while fostering genuine human connection across digital spaces.'
+    },
+    {
+      id: 'astral-finance',
+      title: 'Astral Finance',
+      description: t('financial_description'),
+      icon: <CreditCard className="h-8 w-8 text-white" />,
+      linkPath: '/astral-finance',
+      backgroundImageUrl: '/public/lovable-uploads/093a8651-c02b-44a0-8ece-ac3587ac90ec.png',
+      reversed: true,
+      facts: [
+        'Users who complete our financial education modules improve investment returns by an average of 32%',
+        'Our AI advisory system has outperformed traditional financial advisors in 7 consecutive quarters',
+        'Astral Finance has helped over 50,000 underserved individuals access banking services for the first time'
+      ],
+      vision2030: 'By 2030, Astral Finance will create a financial ecosystem where education and sophisticated tools work in harmony, empowering every individual to achieve financial security regardless of their starting point.'
+    },
+    {
+      id: 'astral-studios',
+      title: 'Astral Studios',
+      description: t('design_description'),
+      icon: <Layers className="h-8 w-8 text-white" />,
+      linkPath: '/astral-studios',
+      backgroundImageUrl: '/public/lovable-uploads/0081bfec-f662-43e2-a11c-7dd04c52474e.png',
+      facts: [
+        'Our real-time rendering engine processes architectural changes with zero perceptible latency',
+        'Digital twins created by Astral Studios have been used in urban planning for 12 major cities',
+        'Our VR walkthroughs reduce client revision requests by 78% compared to traditional presentations'
+      ],
+      vision2030: 'By 2030, Astral Studios will revolutionize spatial design by creating immersive digital environments that can be experienced before physical construction, bridging imagination and reality.'
+    },
+    {
+      id: 'spacecraft',
+      title: 'Spacecraft',
+      description: t('fashion_description'),
+      icon: <Triangle className="h-8 w-8 text-white" />,
+      linkPath: '/spacecraft',
+      backgroundImageUrl: '/public/lovable-uploads/8521ca11-d929-479f-aba7-92cb28897432.png',
+      reversed: true,
+      facts: [
+        'Our adaptive fabrics can adjust temperature regulation within 0.5 degrees of optimal comfort',
+        'Spacecraft textiles incorporate recycled materials from space industry waste',
+        'Our programmable color-changing technology uses 80% less energy than previous generations'
+      ],
+      vision2030: 'By 2030, Spacecraft will transform clothing from static items to dynamic personal ecosystems that adapt to the wearer's needs while maintaining zero environmental impact throughout the product lifecycle.'
+    },
+    {
+      id: 'web3',
+      title: t('web3'),
+      description: t('web3_description'),
+      icon: <Atom className="h-8 w-8 text-white" />,
+      linkPath: '/web3',
+      backgroundImageUrl: '/public/lovable-uploads/e77a0b26-350e-47c6-85f3-0be2da5f2593.png',
+      facts: [
+        'Our NFT marketplace has helped digital artists earn over $42 million in primary sales',
+        'The Astroverse DAO governance system has processed over 1,200 community proposals',
+        'Our web3 authentication system reduces login friction by 95% while improving security'
+      ],
+      vision2030: 'By 2030, Astroverse will create a web3 ecosystem where digital ownership is intuitive, governance is transparent, and users have complete control over their digital identities and assets.'
+    },
+    {
+      id: 'connectivity',
+      title: 'Digital Connectivity',
+      description: t('esim_service'),
+      icon: <Satellite className="h-8 w-8 text-white" />,
+      linkPath: '/connectivity',
+      backgroundImageUrl: '/public/lovable-uploads/071bde78-c428-4001-a95e-b9ec132f9119.png',
+      reversed: true,
+      logoUrl: '/public/lovable-uploads/f2adb176-2cca-441e-855f-ffab4caf920f.png',
+      facts: [
+        'Our satellite constellation provides connectivity to regions covering 97.4% of the global population',
+        'TarsNet achieves sub-20ms latency across 85% of connected regions',
+        'Our eSIM technology works in 195+ countries without requiring physical SIM changes'
+      ],
+      vision2030: 'By 2030, our connectivity solutions will eliminate digital divides worldwide, providing affordable, high-speed internet access to every region on Earth with near-zero latency.'
+    },
+    {
+      id: 'crypto',
+      title: 'Cryptocurrency',
+      description: 'Secure digital assets powering the Astroverse ecosystem',
+      icon: <Star className="h-8 w-8 text-white" />,
+      linkPath: '/astorium',
+      backgroundImageUrl: '/public/lovable-uploads/64deced2-a936-4cd3-b3b7-fe15ecb1e467.png',
+      logoUrl: '/public/lovable-uploads/54c19d36-37f1-4702-b358-e73b4df0f8b9.png',
+      facts: [
+        'Astorium processes over 4.2 million transactions daily with negligible environmental impact',
+        'Our wallet security has maintained perfect integrity against both conventional and quantum attack simulations',
+        'The Astorium token serves as the utility backbone for all Astroverse platforms and services'
+      ],
+      vision2030: 'By 2030, Astorium will establish a seamless economic layer connecting all digital experiences, enabling frictionless value exchange while maintaining the highest standards of security and privacy.'
+    }
+  ];
 
   return (
     <Layout>
@@ -46,6 +178,12 @@ const Index = () => {
         </div>
         
         <div className="container max-w-4xl mx-auto relative z-10">
+          <img 
+            src="/public/lovable-uploads/89b21cf4-56a0-4c85-ac1f-5557bac0fc1b.png" 
+            alt="Astroverse Logo" 
+            className="h-20 md:h-32 mx-auto mb-8 animate-float"
+          />
+          
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gradient animate-fade-in">
             {t('hero_title')}
           </h1>
@@ -63,7 +201,7 @@ const Index = () => {
             </ExplosionEffect>
             
             <ExplosionEffect>
-              <Link to="/explore">
+              <Link to="/projects">
                 <Button size="lg" variant="outline" className="border-astro-blue text-astro-blue hover:bg-astro-blue/10">
                   {t('learn_more')}
                 </Button>
@@ -81,169 +219,25 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Ecosystem Overview Section */}
-      <section className="py-20 px-4 relative">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-6">{t('our_ecosystem')}</h2>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              {t('ecosystem_description')}
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* RetroTech */}
-            <div className="astro-card hover:scale-105 transition-all duration-300 p-6 astro-glow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-astro-purple to-astro-blue p-0.5 mb-4">
-                  <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-                    <Rocket className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">RetroTech</h3>
-                <p className="text-muted-foreground mb-4">{t('tech_description')}</p>
-                <img 
-                  src="/public/lovable-uploads/e7bedbc5-9dc9-4797-a6cd-5feb5319b5f0.png" 
-                  alt="RetroTech Logo" 
-                  className="w-24 h-24 object-contain mb-4"
-                />
-                <Link to="/retrotech" className="text-astro-blue hover:text-astro-purple transition-colors">
-                  {t('learn_more')}
-                </Link>
-              </div>
-            </div>
-            
-            {/* Echoe-2077 */}
-            <div className="astro-card hover:scale-105 transition-all duration-300 p-6 astro-glow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-astro-blue to-astro-cyan p-0.5 mb-4">
-                  <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-                    <Globe className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Echoe-2077</h3>
-                <p className="text-muted-foreground mb-4">{t('gaming_description')}</p>
-                <Link to="/echoe" className="text-astro-blue hover:text-astro-purple transition-colors">
-                  {t('learn_more')}
-                </Link>
-              </div>
-            </div>
-            
-            {/* Astral Finance */}
-            <div className="astro-card hover:scale-105 transition-all duration-300 p-6 astro-glow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-astro-cyan to-astro-blue p-0.5 mb-4">
-                  <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-                    <CreditCard className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Astral Finance</h3>
-                <p className="text-muted-foreground mb-4">{t('financial_description')}</p>
-                <Link to="/astral-finance" className="text-astro-blue hover:text-astro-purple transition-colors">
-                  {t('learn_more')}
-                </Link>
-              </div>
-            </div>
-            
-            {/* Astral Studios */}
-            <div className="astro-card hover:scale-105 transition-all duration-300 p-6 astro-glow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-astro-purple to-astro-violet p-0.5 mb-4">
-                  <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-                    <Layers className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Astral Studios</h3>
-                <p className="text-muted-foreground mb-4">{t('design_description')}</p>
-                <Link to="/astral-studios" className="text-astro-blue hover:text-astro-purple transition-colors">
-                  {t('learn_more')}
-                </Link>
-              </div>
-            </div>
-            
-            {/* Spacecraft */}
-            <div className="astro-card hover:scale-105 transition-all duration-300 p-6 astro-glow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-astro-violet to-astro-purple p-0.5 mb-4">
-                  <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-                    <Triangle className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Spacecraft</h3>
-                <p className="text-muted-foreground mb-4">{t('fashion_description')}</p>
-                <Link to="/spacecraft" className="text-astro-blue hover:text-astro-purple transition-colors">
-                  {t('learn_more')}
-                </Link>
-              </div>
-            </div>
-            
-            {/* Web3 & NFT */}
-            <div className="astro-card hover:scale-105 transition-all duration-300 p-6 astro-glow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-astro-blue to-astro-purple p-0.5 mb-4">
-                  <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-                    <Atom className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{t('web3')}</h3>
-                <p className="text-muted-foreground mb-4">{t('web3_description')}</p>
-                <Link to="/web3" className="text-astro-blue hover:text-astro-purple transition-colors">
-                  {t('learn_more')}
-                </Link>
-              </div>
-            </div>
-            
-            {/* Lunex & Aether */}
-            <div className="astro-card hover:scale-105 transition-all duration-300 p-6 astro-glow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-astro-cyan to-astro-blue p-0.5 mb-4">
-                  <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-                    <Star className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Lunex & Aether</h3>
-                <p className="text-muted-foreground mb-4">{t('crypto_wallet')}</p>
-                <img 
-                  src="/public/lovable-uploads/570f303b-d79c-4529-a73a-39e849d88dc4.png" 
-                  alt="Astorium Logo" 
-                  className="w-24 h-24 object-contain mb-4"
-                />
-                <Link to="/lunex" className="text-astro-blue hover:text-astro-purple transition-colors">
-                  {t('learn_more')}
-                </Link>
-              </div>
-            </div>
-            
-            {/* Syntril & TarsNet */}
-            <div className="astro-card hover:scale-105 transition-all duration-300 p-6 astro-glow">
-              <div className="flex flex-col items-center text-center">
-                <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-astro-blue to-astro-cyan p-0.5 mb-4">
-                  <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-                    <Satellite className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Syntril & TarsNet</h3>
-                <p className="text-muted-foreground mb-4">{t('esim_service')}</p>
-                <div className="flex flex-row space-x-4">
-                  <img 
-                    src="/public/lovable-uploads/176de78f-b8be-402e-b1cf-72707a84b25a.png" 
-                    alt="Syntril Logo" 
-                    className="w-24 h-24 object-contain mb-4"
-                  />
-                  <img 
-                    src="/public/lovable-uploads/f2adb176-2cca-441e-855f-ffab4caf920f.png" 
-                    alt="TarsNet Logo" 
-                    className="w-24 h-24 object-contain mb-4"
-                  />
-                </div>
-                <Link to="/connectivity" className="text-astro-blue hover:text-astro-purple transition-colors">
-                  {t('learn_more')}
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Project Slides */}
+      {projectSlides.map((project, index) => (
+        <SlideSection
+          key={project.id}
+          id={project.id}
+          title={project.title}
+          description={project.description}
+          facts={project.facts}
+          vision2030={project.vision2030}
+          backgroundColor={index % 2 === 0 ? 'bg-astro-dark/30' : 'bg-astro-black/50'}
+          backgroundImageUrl={project.backgroundImageUrl}
+          icon={project.icon}
+          linkPath={project.linkPath}
+          externalUrl={project.externalUrl}
+          logoUrl={project.logoUrl}
+          reversed={project.reversed}
+          index={index}
+        />
+      ))}
       
       {/* AI Assistants */}
       <section className="py-20 px-4 relative">
@@ -287,81 +281,6 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Featured Projects Carousel */}
-      <section className="py-20 px-4 relative overflow-hidden">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-6">{t('projects')}</h2>
-          </div>
-          
-          <div className="flex overflow-x-auto pb-8 space-x-6 snap-x scrollbar-none">
-            {/* Project 1 */}
-            <div className="snap-center shrink-0 astro-card p-6 w-80 md:w-96 astro-glow">
-              <img 
-                src="/public/lovable-uploads/cbf88306-6035-4fe4-a787-08c3ebea7c34.png" 
-                alt="Astroverse Logo" 
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2">Astroverse</h3>
-              <p className="text-muted-foreground mb-4">The central hub connecting all projects and services</p>
-              <ExplosionEffect>
-                <Button size="sm" className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90">
-                  {t('explore')}
-                </Button>
-              </ExplosionEffect>
-            </div>
-            
-            {/* Project 2 */}
-            <div className="snap-center shrink-0 astro-card p-6 w-80 md:w-96 astro-glow">
-              <img 
-                src="/public/lovable-uploads/e7bedbc5-9dc9-4797-a6cd-5feb5319b5f0.png" 
-                alt="RetroTech Logo" 
-                className="w-full h-48 object-contain rounded-lg mb-4 bg-astro-dark/50"
-              />
-              <h3 className="text-xl font-semibold mb-2">RetroTech</h3>
-              <p className="text-muted-foreground mb-4">Innovative technology solutions for modern challenges</p>
-              <ExplosionEffect>
-                <Button size="sm" className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90">
-                  {t('explore')}
-                </Button>
-              </ExplosionEffect>
-            </div>
-            
-            {/* Project 3 */}
-            <div className="snap-center shrink-0 astro-card p-6 w-80 md:w-96 astro-glow">
-              <img 
-                src="/public/lovable-uploads/54c19d36-37f1-4702-b358-e73b4df0f8b9.png" 
-                alt="Astorium Logo" 
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-xl font-semibold mb-2">Astorium</h3>
-              <p className="text-muted-foreground mb-4">The cryptocurrency powering the Astroverse ecosystem</p>
-              <ExplosionEffect>
-                <Button size="sm" className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90">
-                  {t('explore')}
-                </Button>
-              </ExplosionEffect>
-            </div>
-            
-            {/* Project 4 */}
-            <div className="snap-center shrink-0 astro-card p-6 w-80 md:w-96 astro-glow">
-              <img 
-                src="/public/lovable-uploads/f2adb176-2cca-441e-855f-ffab4caf920f.png" 
-                alt="TarsNet Logo" 
-                className="w-full h-48 object-contain rounded-lg mb-4 bg-astro-dark/50"
-              />
-              <h3 className="text-xl font-semibold mb-2">TarsNet</h3>
-              <p className="text-muted-foreground mb-4">High-speed connectivity services for the digital age</p>
-              <ExplosionEffect>
-                <Button size="sm" className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90">
-                  {t('explore')}
-                </Button>
-              </ExplosionEffect>
             </div>
           </div>
         </div>

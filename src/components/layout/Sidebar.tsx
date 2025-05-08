@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -16,7 +17,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
   const { t } = useTranslation();
   
-  const subsidiaries = [
+  const projects = [
     { name: 'RetroTech', icon: <Rocket className="h-5 w-5" />, path: '/retrotech' },
     { name: 'Echoe-2077', icon: <Globe className="h-5 w-5" />, path: '/echoe' },
     { name: 'Astral Finance', icon: <CreditCard className="h-5 w-5" />, path: '/astral-finance' },
@@ -78,9 +79,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
           </div>
           
           <div className="flex-1 overflow-y-auto px-2">
-            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t('subsidiaries')}</h2>
+            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t('projects')}</h2>
             <nav className="space-y-1">
-              {subsidiaries.map((item) => (
+              {projects.map((item) => (
                 <Link 
                   key={item.name}
                   to={item.path}
