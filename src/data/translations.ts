@@ -30,10 +30,6 @@ const translations = {
     meet_lyra_astra: 'Meet Lyra & Astra',
     ai_assistant_description: 'Your AI companions throughout the Astroverse ecosystem, helping you navigate and maximize your experience across all our platforms.',
     
-    // Projects
-    projects: 'Projects',
-    explore: 'Explore',
-    
     // Launch buttons
     launch_retrotech: 'Launch RetroTech',
     visit_platform: 'Visit Platform',
@@ -69,7 +65,6 @@ const translations = {
     posts: 'posts',
     active_projects: 'Active Projects',
     connections: 'Connections',
-    projects: 'Projects',
     
     // Sign in prompts
     sign_in_required: 'Sign in Required',
@@ -96,6 +91,17 @@ const translations = {
     error: 'Error',
     voice_not_available: 'Voice Input Not Available',
     voice_coming_soon: 'Voice input functionality coming soon!',
+    
+    // Project detail page
+    key_features: 'Key Features',
+    our_vision: 'Our Vision',
+    our_team: 'Our Team',
+    roadmap: 'Roadmap',
+    back_to_astroverse: 'Back to Astroverse',
+    join_adventure: 'Join the Adventure',
+    join_project_description: 'Become part of the {{project}} community and help shape the future of this exciting venture.',
+    signup_astroverse: 'Sign Up for Astroverse',
+    web3: 'Web3'
   },
   fr: {
     // Navigation
@@ -126,10 +132,6 @@ const translations = {
     // AI Assistants
     meet_lyra_astra: 'Rencontrez Lyra & Astra',
     ai_assistant_description: 'Vos compagnons IA à travers l\'écosystème Astroverse, vous aidant à naviguer et à maximiser votre expérience sur toutes nos plateformes.',
-    
-    // Projects
-    projects: 'Projets',
-    explore: 'Explorer',
     
     // Launch buttons
     launch_retrotech: 'Lancer RetroTech',
@@ -166,7 +168,6 @@ const translations = {
     posts: 'publications',
     active_projects: 'Projets Actifs',
     connections: 'Connexions',
-    projects: 'Projets',
     
     // Sign in prompts
     sign_in_required: 'Connexion Requise',
@@ -193,6 +194,17 @@ const translations = {
     error: 'Erreur',
     voice_not_available: 'Entrée Vocale Non Disponible',
     voice_coming_soon: 'Fonctionnalité d\'entrée vocale bientôt disponible !',
+    
+    // Project detail page
+    key_features: 'Caractéristiques Principales',
+    our_vision: 'Notre Vision',
+    our_team: 'Notre Équipe',
+    roadmap: 'Feuille de Route',
+    back_to_astroverse: 'Retour à Astroverse',
+    join_adventure: 'Rejoignez l\'Aventure',
+    join_project_description: 'Devenez membre de la communauté {{project}} et contribuez à façonner l\'avenir de ce projet passionnant.',
+    signup_astroverse: 'Inscrivez-vous à Astroverse',
+    web3: 'Web3'
   },
   es: {
     // Navigation
@@ -223,10 +235,6 @@ const translations = {
     // AI Assistants
     meet_lyra_astra: 'Conoce a Lyra y Astra',
     ai_assistant_description: 'Tus compañeros de IA a lo largo del ecosistema Astroverse, ayudándote a navegar y maximizar tu experiencia en todas nuestras plataformas.',
-    
-    // Projects
-    projects: 'Proyectos',
-    explore: 'Explorar',
     
     // Launch buttons
     launch_retrotech: 'Lanzar RetroTech',
@@ -263,7 +271,6 @@ const translations = {
     posts: 'publicaciones',
     active_projects: 'Proyectos Activos',
     connections: 'Conexiones',
-    projects: 'Proyectos',
     
     // Sign in prompts
     sign_in_required: 'Inicio de Sesión Requerido',
@@ -290,6 +297,17 @@ const translations = {
     error: 'Error',
     voice_not_available: 'Entrada de Voz No Disponible',
     voice_coming_soon: '¡Funcionalidad de entrada de voz próximamente!',
+    
+    // Project detail page
+    key_features: 'Características Clave',
+    our_vision: 'Nuestra Visión',
+    our_team: 'Nuestro Equipo',
+    roadmap: 'Hoja de Ruta',
+    back_to_astroverse: 'Volver a Astroverse',
+    join_adventure: 'Únete a la Aventura',
+    join_project_description: 'Forma parte de la comunidad {{project}} y ayuda a dar forma al futuro de este emocionante proyecto.',
+    signup_astroverse: 'Regístrate en Astroverse',
+    web3: 'Web3'
   },
   it: {
     // Navigation
@@ -320,10 +338,6 @@ const translations = {
     // AI Assistants
     meet_lyra_astra: 'Incontra Lyra e Astra',
     ai_assistant_description: 'I tuoi compagni IA in tutto l\'ecosistema Astroverse, che ti aiutano a navigare e massimizzare la tua esperienza su tutte le nostre piattaforme.',
-    
-    // Projects
-    projects: 'Progetti',
-    explore: 'Esplora',
     
     // Launch buttons
     launch_retrotech: 'Avvia RetroTech',
@@ -360,7 +374,6 @@ const translations = {
     posts: 'post',
     active_projects: 'Progetti Attivi',
     connections: 'Connessioni',
-    projects: 'Progetti',
     
     // Sign in prompts
     sign_in_required: 'Accesso Richiesto',
@@ -387,6 +400,17 @@ const translations = {
     error: 'Errore',
     voice_not_available: 'Input Vocale Non Disponibile',
     voice_coming_soon: 'Funzionalità di input vocale in arrivo!',
+    
+    // Project detail page
+    key_features: 'Caratteristiche Principali',
+    our_vision: 'La Nostra Visione',
+    our_team: 'Il Nostro Team',
+    roadmap: 'Roadmap',
+    back_to_astroverse: 'Torna ad Astroverse',
+    join_adventure: 'Unisciti all\'Avventura',
+    join_project_description: 'Diventa parte della comunità {{project}} e contribuisci a plasmare il futuro di questa entusiasmante iniziativa.',
+    signup_astroverse: 'Registrati ad Astroverse',
+    web3: 'Web3'
   },
   ru: {
     // Navigation
@@ -417,10 +441,6 @@ const translations = {
     // AI Assistants
     meet_lyra_astra: 'Познакомьтесь с Лирой и Астрой',
     ai_assistant_description: 'Ваши ИИ-компаньоны по всей экосистеме Астроверс, помогающие навигации и максимизации вашего опыта на всех наших платформах.',
-    
-    // Projects
-    projects: 'Проекты',
-    explore: 'Исследовать',
     
     // Launch buttons
     launch_retrotech: 'Запустить RetroTech',
@@ -457,7 +477,6 @@ const translations = {
     posts: 'публикаций',
     active_projects: 'Активные Проекты',
     connections: 'Связи',
-    projects: 'Проекты',
     
     // Sign in prompts
     sign_in_required: 'Требуется Вход',
@@ -484,6 +503,17 @@ const translations = {
     error: 'Ошибка',
     voice_not_available: 'Голосовой Ввод Недоступен',
     voice_coming_soon: 'Функция голосового ввода скоро появится!',
+    
+    // Project detail page
+    key_features: 'Ключевые Функции',
+    our_vision: 'Наше Видение',
+    our_team: 'Наша Команда',
+    roadmap: 'Дорожная Карта',
+    back_to_astroverse: 'Вернуться в Астроверс',
+    join_adventure: 'Присоединяйтесь к Приключению',
+    join_project_description: 'Станьте частью сообщества {{project}} и помогите сформировать будущее этого увлекательного проекта.',
+    signup_astroverse: 'Зарегистрироваться в Астроверс',
+    web3: 'Web3'
   },
   zh: {
     // Navigation
@@ -514,10 +544,6 @@ const translations = {
     // AI Assistants
     meet_lyra_astra: '认识莱拉和阿斯特拉',
     ai_assistant_description: '您在星界生态系统中的AI伙伴，帮助您在我们所有平台上导航并最大化您的体验。',
-    
-    // Projects
-    projects: '项目',
-    explore: '探索',
     
     // Launch buttons
     launch_retrotech: '启动RetroTech',
@@ -554,7 +580,6 @@ const translations = {
     posts: '帖子',
     active_projects: '活跃项目',
     connections: '连接',
-    projects: '项目',
     
     // Sign in prompts
     sign_in_required: '需要登录',
@@ -581,6 +606,17 @@ const translations = {
     error: '错误',
     voice_not_available: '语音输入不可用',
     voice_coming_soon: '语音输入功能即将推出！',
+    
+    // Project detail page
+    key_features: '主要功能',
+    our_vision: '我们的愿景',
+    our_team: '我们的团队',
+    roadmap: '路线图',
+    back_to_astroverse: '返回星界',
+    join_adventure: '加入冒险',
+    join_project_description: '成为{{project}}社区的一员，帮助塑造这个令人兴奋的项目的未来。',
+    signup_astroverse: '注册星界',
+    web3: 'Web3'
   }
 };
 
