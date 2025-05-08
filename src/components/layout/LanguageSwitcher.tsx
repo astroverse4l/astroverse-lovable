@@ -8,7 +8,12 @@ import {
 } from "@/components/ui/popover";
 import { useLanguage } from "@/hooks/useLanguage";
 
-const languages = [
+type LanguageOption = {
+  code: 'en' | 'fr' | 'es' | 'it' | 'ru' | 'zh';
+  name: string;
+};
+
+const languages: LanguageOption[] = [
   { code: 'en', name: 'English' },
   { code: 'fr', name: 'Français' },
   { code: 'es', name: 'Español' },
