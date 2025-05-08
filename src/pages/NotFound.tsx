@@ -1,10 +1,9 @@
-
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { Planet, Rocket } from 'lucide-react';
+import { Globe, Rocket } from 'lucide-react';
 import StarField from '@/components/effects/StarField';
 import ParallaxEffect from '@/components/effects/ParallaxEffect';
 
@@ -35,7 +34,7 @@ const NotFound = () => {
         <div className="text-center relative z-10 animate-fade-in">
           <div className="flex items-center justify-center mb-6">
             <div className="relative">
-              <Planet className="h-24 w-24 text-astro-blue/80" />
+              <Globe className="h-24 w-24 text-astro-blue/80" />
               <Rocket className="h-12 w-12 text-astro-purple absolute top-1/2 right-0 transform -translate-y-1/2 rotate-45" />
             </div>
           </div>

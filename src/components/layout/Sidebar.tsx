@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ChevronLeft, ChevronRight, 
-  Rocket, Planet, Atom, Star, 
+  Rocket, Globe, Atom, Star, 
   CreditCard, Layers, Triangle, Satellite
 } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -19,7 +18,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
   
   const subsidiaries = [
     { name: 'RetroTech', icon: <Rocket className="h-5 w-5" />, path: '/retrotech' },
-    { name: 'Echoe-2077', icon: <Planet className="h-5 w-5" />, path: '/echoe' },
+    { name: 'Echoe-2077', icon: <Globe className="h-5 w-5" />, path: '/echoe' },
     { name: 'Astral Finance', icon: <CreditCard className="h-5 w-5" />, path: '/astral-finance' },
     { name: 'Astral Studios', icon: <Layers className="h-5 w-5" />, path: '/astral-studios' },
     { name: 'Spacecraft', icon: <Triangle className="h-5 w-5" />, path: '/spacecraft' },
@@ -60,7 +59,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
             <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t('navigation')}</h2>
             <nav className="space-y-1">
               <Link to="/" className="flex items-center space-x-3 text-white hover:text-primary px-3 py-2 rounded-md hover:bg-white/5 transition-colors">
-                <Planet className="h-5 w-5" />
+                <Globe className="h-5 w-5" />
                 <span>{t('home')}</span>
               </Link>
               <Link to="/projects" className="flex items-center space-x-3 text-white hover:text-primary px-3 py-2 rounded-md hover:bg-white/5 transition-colors">

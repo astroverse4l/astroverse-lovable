@@ -1,11 +1,10 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { 
-  Rocket, Planet, Star, Satellite, 
+  Rocket, Globe, Star, Satellite, 
   Atom, CreditCard, Layers, Triangle
 } from 'lucide-react';
 import ParallaxEffect from '@/components/effects/ParallaxEffect';
@@ -119,7 +118,7 @@ const Index = () => {
               <div className="flex flex-col items-center text-center">
                 <div className="h-16 w-16 flex items-center justify-center rounded-full bg-gradient-to-r from-astro-blue to-astro-cyan p-0.5 mb-4">
                   <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-                    <Planet className="h-8 w-8 text-white" />
+                    <Globe className="h-8 w-8 text-white" />
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Echoe-2077</h3>
