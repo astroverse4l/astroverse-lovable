@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Female, Male } from 'lucide-react';
+import { User, UserRound } from 'lucide-react';
 import AIAssistant from './AIAssistant';
 import { useTranslation } from '@/hooks/useTranslation';
 
@@ -24,7 +24,7 @@ const AssistantLauncher = () => {
           onClick={() => openAssistant('astra')}
           title={t('astra_assistant')}
         >
-          <Male className="h-6 w-6" />
+          <UserRound className="h-6 w-6" />
         </Button>
         
         <Button
@@ -33,7 +33,7 @@ const AssistantLauncher = () => {
           onClick={() => openAssistant('lyra')}
           title={t('lyra_assistant')}
         >
-          <Female className="h-6 w-6" />
+          <User className="h-6 w-6" />
         </Button>
       </div>
 
