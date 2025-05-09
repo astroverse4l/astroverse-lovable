@@ -1,24 +1,27 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 import Layout from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { 
   Rocket, Globe, Star, Satellite, 
-  Atom, CreditCard, Layers, Triangle
+  Atom, CreditCard, Layers, Triangle,
+  Brain, Sparkles
 } from 'lucide-react';
 import ParallaxEffect from '@/components/effects/ParallaxEffect';
 import ExplosionEffect from '@/components/effects/ExplosionEffect';
 import SlideSection from '@/components/sections/SlideSection';
+import AIAssistantsSection from '@/components/sections/AIAssistantsSection';
 import '../styles/slideSection.css';
 
 const Index = () => {
   const { t } = useTranslation();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [scrollY, setScrollY] = useState(0);
   
   useEffect(() => {
-    // You can replace this with actual video or add animation effects
+    // Set video playback speed
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.5;
     }
@@ -26,8 +29,17 @@ const Index = () => {
     // Add CSS to body for smooth scrolling
     document.body.style.scrollBehavior = 'smooth';
     
+    // Track scroll position for parallax effects
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      document.documentElement.style.setProperty('--scroll-speed', String(window.scrollY * 0.001));
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    
     return () => {
       document.body.style.scrollBehavior = '';
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -107,38 +119,38 @@ const Index = () => {
       vision2030: "By 2030, Spacecraft will transform clothing from static items to dynamic personal ecosystems that adapt to the wearer's needs while maintaining zero environmental impact throughout the product lifecycle."
     },
     {
-      id: 'web3',
-      title: t('web3'),
+      id: 'aether',
+      title: 'Aether',
       description: t('web3_description'),
       icon: <Atom className="h-8 w-8 text-white" />,
-      linkPath: '/web3',
+      linkPath: '/aether',
       backgroundImageUrl: '/public/lovable-uploads/e77a0b26-350e-47c6-85f3-0be2da5f2593.png',
       facts: [
         'Our NFT marketplace has helped digital artists earn over $42 million in primary sales',
         'The Astroverse DAO governance system has processed over 1,200 community proposals',
         'Our web3 authentication system reduces login friction by 95% while improving security'
       ],
-      vision2030: 'By 2030, Astroverse will create a web3 ecosystem where digital ownership is intuitive, governance is transparent, and users have complete control over their digital identities and assets.'
+      vision2030: 'By 2030, Aether will create a web3 ecosystem where digital ownership is intuitive, governance is transparent, and users have complete control over their digital identities and assets.'
     },
     {
-      id: 'connectivity',
-      title: 'Digital Connectivity',
+      id: 'syntril',
+      title: 'Syntril',
       description: t('esim_service'),
       icon: <Satellite className="h-8 w-8 text-white" />,
-      linkPath: '/connectivity',
+      linkPath: '/syntril',
       backgroundImageUrl: '/public/lovable-uploads/071bde78-c428-4001-a95e-b9ec132f9119.png',
       reversed: true,
       logoUrl: '/public/lovable-uploads/f2adb176-2cca-441e-855f-ffab4caf920f.png',
       facts: [
         'Our satellite constellation provides connectivity to regions covering 97.4% of the global population',
-        'TarsNet achieves sub-20ms latency across 85% of connected regions',
+        'Syntril achieves sub-20ms latency across 85% of connected regions',
         'Our eSIM technology works in 195+ countries without requiring physical SIM changes'
       ],
       vision2030: 'By 2030, our connectivity solutions will eliminate digital divides worldwide, providing affordable, high-speed internet access to every region on Earth with near-zero latency.'
     },
     {
-      id: 'crypto',
-      title: 'Cryptocurrency',
+      id: 'astorium',
+      title: 'Astorium',
       description: 'Secure digital assets powering the Astroverse ecosystem',
       icon: <Star className="h-8 w-8 text-white" />,
       linkPath: '/astorium',
@@ -156,24 +168,48 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center text-center px-4">
+      <section className="relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        {/* Video background */}
+        <video 
+          ref={videoRef}
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          className="absolute inset-0 w-full h-full object-cover z-[-1]"
+          style={{ filter: 'brightness(0.4) saturate(1.5)' }}
+        >
+          <source src="/public/lovable-uploads/27a7c211-bdba-4b2d-85a9-30d69e0dca8c.png" type="video/mp4" />
+          <source src="/public/lovable-uploads/cf475c18-fb0f-4f87-8f72-fb35edbeff01.png" type="video/mp4" />
+          <source src="/public/lovable-uploads/759e9d6a-9dbb-4160-91ac-4f8d386774b9.png" type="video/mp4" />
+        </video>
+        
         {/* Parallax background elements */}
         <ParallaxEffect speed={0.3}>
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-astro-purple to-astro-blue rounded-full blur-3xl opacity-20"></div>
+          <div 
+            className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-astro-purple to-astro-blue rounded-full blur-3xl opacity-20"
+            style={{ transform: `translateY(${scrollY * 0.05}px)` }}
+          ></div>
         </ParallaxEffect>
         
         <ParallaxEffect speed={0.5}>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-astro-blue to-astro-cyan rounded-full blur-3xl opacity-20"></div>
+          <div 
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-astro-blue to-astro-cyan rounded-full blur-3xl opacity-20"
+            style={{ transform: `translateY(${scrollY * -0.03}px)` }}
+          ></div>
         </ParallaxEffect>
         
         {/* Planet decoration */}
-        <div className="absolute right-10 top-32 md:right-32 md:top-40 w-20 h-20 md:w-40 md:h-40 rounded-full bg-astro-blue/20 backdrop-filter backdrop-blur-xl animate-float"></div>
+        <div 
+          className="absolute right-10 top-32 md:right-32 md:top-40 w-20 h-20 md:w-40 md:h-40 rounded-full bg-astro-blue/20 backdrop-filter backdrop-blur-xl animate-float"
+          style={{ animationDelay: '0.5s' }}
+        ></div>
         
         {/* Star decorations */}
-        <div className="absolute left-20 bottom-40 text-astro-purple animate-pulse-glow">
+        <div className="absolute left-20 bottom-40 text-astro-purple animate-pulse-slow">
           <Star className="h-6 w-6 md:h-10 md:w-10" />
         </div>
-        <div className="absolute right-1/4 top-1/3 text-astro-blue animate-pulse-glow">
+        <div className="absolute right-1/4 top-1/3 text-astro-blue animate-pulse-slow animation-delay-1000">
           <Star className="h-4 w-4 md:h-6 md:w-6" />
         </div>
         
@@ -184,17 +220,17 @@ const Index = () => {
             className="h-20 md:h-32 mx-auto mb-8 animate-float"
           />
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gradient animate-fade-in">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gradient font-orbitron">
             {t('hero_title')}
           </h1>
-          <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto animate-fade-in">
+          <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-2xl mx-auto font-exo2">
             {t('hero_subtitle')}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <ExplosionEffect>
               <Link to="/signup">
-                <Button size="lg" className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90">
+                <Button size="lg" className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90 font-exo2">
                   {t('get_started')}
                 </Button>
               </Link>
@@ -202,7 +238,7 @@ const Index = () => {
             
             <ExplosionEffect>
               <Link to="/projects">
-                <Button size="lg" variant="outline" className="border-astro-blue text-astro-blue hover:bg-astro-blue/10">
+                <Button size="lg" variant="outline" className="border-astro-blue text-astro-blue hover:bg-astro-blue/10 font-exo2">
                   {t('learn_more')}
                 </Button>
               </Link>
@@ -239,67 +275,23 @@ const Index = () => {
         />
       ))}
       
-      {/* AI Assistants */}
-      <section className="py-20 px-4 relative">
-        <div className="container mx-auto max-w-6xl">
-          <div className="astro-card p-8 md:p-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-6">{t('meet_lyra_astra')}</h2>
-                <p className="text-lg text-white/80 mb-6">
-                  {t('ai_assistant_description')}
-                </p>
-                <ExplosionEffect>
-                  <Button className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90">
-                    {t('get_started')}
-                  </Button>
-                </ExplosionEffect>
-              </div>
-              
-              <div className="flex justify-center">
-                <div className="relative">
-                  {/* AI Assistant Illustration */}
-                  <div className="h-64 w-64 rounded-full bg-gradient-to-r from-astro-purple/20 to-astro-blue/20 flex items-center justify-center p-1 backdrop-blur-lg">
-                    <div className="h-full w-full rounded-full bg-astro-black/50 flex items-center justify-center">
-                      <div className="text-center">
-                        <Atom className="h-16 w-16 text-white mx-auto animate-spin-slow" />
-                        <h3 className="text-xl font-medium text-gradient mt-2">Lyra & Astra</h3>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Orbiting elements */}
-                  <div className="absolute top-0 left-0 right-0 bottom-0 animate-spin-slow" style={{ animationDuration: '20s' }}>
-                    <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-1/4">
-                      <div className="h-8 w-8 rounded-full bg-astro-purple"></div>
-                    </div>
-                  </div>
-                  <div className="absolute top-0 left-0 right-0 bottom-0 animate-spin-slow" style={{ animationDuration: '15s', animationDirection: 'reverse' }}>
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/4">
-                      <div className="h-6 w-6 rounded-full bg-astro-blue"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* AI Assistants Section */}
+      <AIAssistantsSection />
       
       {/* CTA Section */}
       <section className="py-20 px-4 relative">
         <div className="container mx-auto max-w-6xl">
           <div className="astro-card p-8 md:p-12 bg-gradient-to-r from-astro-dark/80 to-astro-black/80">
             <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-6">
-                {t('hero_title')}
+              <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-6 font-orbitron">
+                {t('join_astroverse')}
               </h2>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8">
-                {t('hero_subtitle')}
+              <p className="text-lg text-white/80 max-w-2xl mx-auto mb-8 font-exo2">
+                Join us in shaping the future of digital experiences. Explore our projects, connect with our community, and discover the limitless possibilities of the Astroverse.
               </p>
               <ExplosionEffect>
                 <Link to="/signup">
-                  <Button size="lg" className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90">
+                  <Button size="lg" className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90 font-exo2">
                     {t('get_started')}
                   </Button>
                 </Link>

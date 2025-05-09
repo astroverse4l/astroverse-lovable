@@ -79,16 +79,17 @@ const SlideSection: React.FC<SlideSectionProps> = ({
       } section-hidden`}
       style={{
         zIndex: 10 - index,
-        marginTop: index === 0 ? '0' : '-10vh',
+        marginTop: index === 0 ? '0' : '-15vh',
       }}
     >
-      {/* Background */}
+      {/* Background with parallax effect */}
       <div
         className={`absolute inset-0 ${backgroundColor} z-0 transform transition-transform duration-700`}
         style={{
           backgroundImage: backgroundImageUrl ? `url(${backgroundImageUrl})` : 'none',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          transform: `translateY(calc(var(--scroll-speed, 0) * ${index % 2 === 0 ? '-10px' : '10px'}))`,
         }}
       >
         {backgroundImageUrl && gradientOverlay}
@@ -96,7 +97,7 @@ const SlideSection: React.FC<SlideSectionProps> = ({
 
       {/* Content */}
       <div
-        className={`container mx-auto px-4 py-24 h-full flex items-center relative z-10 pt-[15vh] ${
+        className={`container mx-auto px-4 py-24 h-full flex items-center relative z-10 pt-[20vh] ${
           reversed ? 'lg:flex-row-reverse' : 'lg:flex-row'
         }`}
       >
@@ -112,7 +113,7 @@ const SlideSection: React.FC<SlideSectionProps> = ({
                   {icon}
                 </div>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient">{title}</h2>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient font-orbitron">{title}</h2>
             </div>
 
             {logoUrl && (
@@ -130,7 +131,7 @@ const SlideSection: React.FC<SlideSectionProps> = ({
             )}
 
             <p
-              className={`text-xl text-white/80 mb-6 leading-relaxed ${
+              className={`text-xl text-white/80 mb-6 leading-relaxed font-exo2 ${
                 reversed ? 'lg:text-right' : 'lg:text-left'
               }`}
             >
@@ -140,20 +141,20 @@ const SlideSection: React.FC<SlideSectionProps> = ({
             <div
               className={`space-y-6 ${reversed ? 'lg:text-right' : 'lg:text-left'}`}
             >
-              <div className="astro-card p-6 backdrop-blur-lg">
-                <h3 className="text-xl font-semibold text-gradient mb-3">{t('fun_facts')}</h3>
+              <div className="astro-card p-6 backdrop-blur-lg transform transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold text-gradient mb-3 font-orbitron">{t('fun_facts')}</h3>
                 <ul className="space-y-2 list-disc pl-5">
                   {facts.map((fact, i) => (
-                    <li key={i} className="text-white/80">
+                    <li key={i} className="text-white/80 font-exo2">
                       {fact}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="astro-card p-6 backdrop-blur-lg">
-                <h3 className="text-xl font-semibold text-gradient mb-3">{t('vision_2030')}</h3>
-                <p className="text-white/80">{vision2030}</p>
+              <div className="astro-card p-6 backdrop-blur-lg transform transition-all duration-300 hover:scale-105">
+                <h3 className="text-xl font-semibold text-gradient mb-3 font-orbitron">{t('vision_2030')}</h3>
+                <p className="text-white/80 font-exo2">{vision2030}</p>
               </div>
             </div>
 
@@ -164,7 +165,7 @@ const SlideSection: React.FC<SlideSectionProps> = ({
             >
               <ExplosionEffect>
                 <Link to={linkPath}>
-                  <Button className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90">
+                  <Button className="bg-gradient-to-r from-astro-purple to-astro-blue hover:opacity-90 font-exo2">
                     {t('learn_more')}
                   </Button>
                 </Link>
@@ -174,7 +175,7 @@ const SlideSection: React.FC<SlideSectionProps> = ({
                 <ExplosionEffect>
                   <Button
                     variant="outline"
-                    className="border-astro-blue text-astro-blue hover:bg-astro-blue/10 flex items-center gap-2"
+                    className="border-astro-blue text-astro-blue hover:bg-astro-blue/10 flex items-center gap-2 font-exo2"
                     onClick={() => window.open(externalUrl, '_blank')}
                   >
                     {t('visit_platform')}
@@ -200,7 +201,7 @@ const SlideSection: React.FC<SlideSectionProps> = ({
       </div>
 
       {/* Overlap reveal effect for next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-[15vh] bg-gradient-to-t from-astro-black to-transparent z-20"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-[20vh] bg-gradient-to-t from-astro-black to-transparent z-20"></div>
     </section>
   );
 };

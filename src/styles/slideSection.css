@@ -2,7 +2,7 @@
 /* Slide section animations */
 .section-hidden {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(80px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -13,11 +13,11 @@
 
 /* Different animations for even and odd sections */
 .section-even.section-hidden {
-  transform: translateY(50px);
+  transform: translateY(80px);
 }
 
 .section-odd.section-hidden {
-  transform: translateY(80px);
+  transform: translateY(120px);
 }
 
 /* Overlap effect */
@@ -58,8 +58,16 @@
   animation: pulse-slow 5s ease-in-out infinite;
 }
 
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
 .animation-delay-1000 {
   animation-delay: 1s;
+}
+
+.animation-delay-1500 {
+  animation-delay: 1.5s;
 }
 
 /* For mobile devices */
@@ -70,8 +78,98 @@
   }
 }
 
+/* Parallax Effect */
+.parallax-container {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax-layer-back {
+  transform: translateZ(-1px) scale(2);
+}
+
+.parallax-layer-base {
+  transform: translateZ(0);
+}
+
 /* For slide section effect */
 .overlap-slide {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
   margin-bottom: -15vh;
+}
+
+/* Custom scroll effect for slide sections */
+:root {
+  --scroll-speed: 0;
+}
+
+/* Add font faces */
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Regular.woff2') format('woff2'),
+       url('/fonts/Orbitron-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orbitron';
+  src: url('/fonts/Orbitron-Bold.woff2') format('woff2'),
+       url('/fonts/Orbitron-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  src: url('/fonts/Exo2-Regular.woff2') format('woff2'),
+       url('/fonts/Exo2-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  src: url('/fonts/Exo2-Bold.woff2') format('woff2'),
+       url('/fonts/Exo2-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Antimatrix';
+  src: url('/fonts/Antimatrix.woff2') format('woff2'),
+       url('/fonts/Antimatrix.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font utility classes */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-exo2 {
+  font-family: 'Exo 2', sans-serif;
+}
+
+.font-antimatrix {
+  font-family: 'Antimatrix', sans-serif;
+  letter-spacing: 0.1em;
 }

@@ -29,7 +29,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div className="flex flex-col items-center">
           <div className="h-16 w-16 rounded-full bg-gradient-to-r from-astro-purple to-astro-blue p-0.5 mb-4">
             <div className="h-full w-full rounded-full bg-astro-black flex items-center justify-center">
-              <span className="text-2xl font-bold text-white">A</span>
+              <span className="text-2xl font-bold text-white font-orbitron">A</span>
             </div>
           </div>
           <div className="loading-ring"></div>
@@ -42,7 +42,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <Navbar onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
       <Sidebar isOpen={sidebarOpen} toggle={() => setSidebarOpen(!sidebarOpen)} />
       
       <main className={`flex-1 pt-20 transition-all duration-300 ${sidebarOpen ? 'md:ml-64' : ''}`}>

@@ -23,11 +23,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
     { name: 'Astral Finance', icon: <CreditCard className="h-5 w-5" />, path: '/astral-finance' },
     { name: 'Astral Studios', icon: <Layers className="h-5 w-5" />, path: '/astral-studios' },
     { name: 'Spacecraft', icon: <Triangle className="h-5 w-5" />, path: '/spacecraft' },
-    { name: 'Lunex', icon: <Star className="h-5 w-5" />, path: '/lunex' },
     { name: 'Aether', icon: <Atom className="h-5 w-5" />, path: '/aether' },
     { name: 'Syntril', icon: <Satellite className="h-5 w-5" />, path: '/syntril' },
     { name: 'TarsNet', icon: <Satellite className="h-5 w-5" />, path: '/tarsnet' },
-    { name: 'Astorium', icon: <Rocket className="h-5 w-5" />, path: '/astorium' },
+    { name: 'Astorium', icon: <Star className="h-5 w-5" />, path: '/astorium' },
   ];
 
   return (
@@ -45,7 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
                   <span className="text-sm font-bold text-white">A</span>
                 </div>
               </div>
-              <span className="text-lg font-bold text-gradient">ASTROVERSE</span>
+              <span className="text-lg font-bold text-gradient font-orbitron">ASTROVERSE</span>
             </Link>
             
             <button 
@@ -57,29 +56,29 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
           </div>
           
           <div className="space-y-2 mb-8 px-2">
-            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t('navigation')}</h2>
+            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2 font-exo2">{t('navigation')}</h2>
             <nav className="space-y-1">
               <Link to="/" className="flex items-center space-x-3 text-white hover:text-primary px-3 py-2 rounded-md hover:bg-white/5 transition-colors">
                 <Globe className="h-5 w-5" />
-                <span>{t('home')}</span>
+                <span className="font-exo2">{t('home')}</span>
               </Link>
               <Link to="/projects" className="flex items-center space-x-3 text-white hover:text-primary px-3 py-2 rounded-md hover:bg-white/5 transition-colors">
                 <Rocket className="h-5 w-5" />
-                <span>{t('projects')}</span>
+                <span className="font-exo2">{t('projects')}</span>
               </Link>
               <Link to="/explore" className="flex items-center space-x-3 text-white hover:text-primary px-3 py-2 rounded-md hover:bg-white/5 transition-colors">
                 <Star className="h-5 w-5" />
-                <span>{t('explore')}</span>
+                <span className="font-exo2">{t('explore')}</span>
               </Link>
               <Link to="/community" className="flex items-center space-x-3 text-white hover:text-primary px-3 py-2 rounded-md hover:bg-white/5 transition-colors">
                 <Atom className="h-5 w-5" />
-                <span>{t('community')}</span>
+                <span className="font-exo2">{t('community')}</span>
               </Link>
             </nav>
           </div>
           
           <div className="flex-1 overflow-y-auto px-2">
-            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2">{t('projects')}</h2>
+            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-2 font-exo2">{t('projects')}</h2>
             <nav className="space-y-1">
               {projects.map((item) => (
                 <Link 
@@ -88,7 +87,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
                   className="flex items-center space-x-3 text-white hover:text-primary px-3 py-2 rounded-md hover:bg-white/5 transition-colors"
                 >
                   {item.icon}
-                  <span>{item.name}</span>
+                  <span className="font-exo2">{item.name}</span>
                 </Link>
               ))}
             </nav>
@@ -97,7 +96,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggle }) => {
           <div className="mt-auto px-2">
             <Button 
               variant="outline" 
-              className="w-full border-astro-blue text-astro-blue hover:bg-astro-blue/10 flex items-center justify-center space-x-2"
+              className="w-full border-astro-blue text-astro-blue hover:bg-astro-blue/10 flex items-center justify-center space-x-2 font-exo2"
               onClick={() => {
                 window.open('https://retro-tech-ast.vercel.app', '_blank');
               }}
