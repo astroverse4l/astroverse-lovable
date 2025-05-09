@@ -4,6 +4,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 import StarField from '../effects/StarField';
+import AIAssistantPanel from '../ai/AIAssistantPanel';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -32,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
           </div>
           <div className="loading-ring"></div>
-          <p className="mt-4 text-gradient text-lg font-medium">ASTROVERSE</p>
+          <p className="mt-4 text-gradient text-lg font-medium font-orbitron">ASTROVERSE</p>
         </div>
         <StarField starCount={100} />
       </div>
@@ -52,6 +53,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className={`transition-all duration-300 ${sidebarOpen ? 'md:ml-64' : ''}`}>
         <Footer />
       </div>
+      
+      {/* AI Assistant Panel */}
+      <AIAssistantPanel />
     </div>
   );
 };
