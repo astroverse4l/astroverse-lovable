@@ -24,7 +24,7 @@ const RetroTech = () => {
     <ProjectDetailTemplate
       title="RetroTech"
       description="Cutting-edge technology solutions for modern challenges, pioneering the fusion of retro-inspired design with futuristic technology."
-      logo="/public/lovable-uploads/e7bedbc5-9dc9-4797-a6cd-5feb5319b5f0.png"
+      logoUrl="/public/lovable-uploads/e7bedbc5-9dc9-4797-a6cd-5feb5319b5f0.png"
       coverImage="/public/lovable-uploads/c9cd2b0a-6a28-486d-9845-6491ffd2f47a.png"
       externalUrl="https://retro-tech-ast.vercel.app"
       icon={<Rocket className="h-8 w-8 text-white" />}

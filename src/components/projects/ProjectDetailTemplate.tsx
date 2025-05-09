@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -13,7 +12,9 @@ interface ProjectDetailTemplateProps {
   description: string;
   icon: React.ReactNode;
   logoUrl?: string;
+  logo?: string; // Added missing property
   backgroundImageUrl?: string;
+  coverImage?: string; // Added missing property
   sections: {
     title: string;
     content: string;
@@ -28,7 +29,9 @@ const ProjectDetailTemplate: React.FC<ProjectDetailTemplateProps> = ({
   description,
   icon,
   logoUrl,
+  logo, // Added to destructured props
   backgroundImageUrl,
+  coverImage, // Added to destructured props
   sections,
   features,
   externalUrl,
@@ -36,13 +39,18 @@ const ProjectDetailTemplate: React.FC<ProjectDetailTemplateProps> = ({
 }) => {
   const { t } = useTranslation();
   
+  // Use logo or logoUrl (for backward compatibility)
+  const displayLogo = logo || logoUrl;
+  // Use coverImage or backgroundImageUrl (for backward compatibility)
+  const displayBackgroundImage = coverImage || backgroundImageUrl;
+  
   return (
     <Layout>
       {/* Hero section */}
       <section className="relative min-h-screen pt-24 pb-20">
         <div className="absolute inset-0 z-0">
-          {backgroundImageUrl ? (
-            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
+          {displayBackgroundImage ? (
+            <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${displayBackgroundImage})` }}>
               <div className="absolute inset-0 bg-gradient-to-b from-astro-black/80 via-astro-black/50 to-astro-black"></div>
             </div>
           ) : (
@@ -61,9 +69,9 @@ const ProjectDetailTemplate: React.FC<ProjectDetailTemplateProps> = ({
                     </div>
                   </div>
                   
-                  {logoUrl ? (
+                  {displayLogo ? (
                     <img 
-                      src={logoUrl} 
+                      src={displayLogo} 
                       alt={`${title} Logo`}
                       className="h-16 md:h-24 object-contain"
                     />
@@ -72,7 +80,7 @@ const ProjectDetailTemplate: React.FC<ProjectDetailTemplateProps> = ({
                   )}
                 </div>
                 
-                {logoUrl && (
+                {displayLogo && (
                   <h1 className="text-4xl md:text-6xl font-bold text-gradient mb-6 font-orbitron">{title}</h1>
                 )}
                 
