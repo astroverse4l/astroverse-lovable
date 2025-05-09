@@ -10,9 +10,14 @@ interface AIResponse {
   createdAt: string;
 }
 
+interface ApiKeys {
+  groq: string;
+  gemini: string;
+}
+
 // Service to handle AI assistant interactions
 export class AIService {
-  private apiKey: string | null = null;
+  private apiKey: ApiKeys | null = null;
   private groqApiEndpoint = 'https://api.groq.com/openai/v1/chat/completions';
   private geminiApiEndpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
   
