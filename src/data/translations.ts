@@ -9,7 +9,7 @@ const translations = {
     signup: 'Sign Up',
     get_started: 'Get Started',
     learn_more: 'Learn More',
-    tech_description: 'Cutting-edge quantum processing technology that's transforming how we compute and process data',
+    tech_description: 'Cutting-edge quantum processing technology that is transforming how we compute and process data',
     gaming_description: 'Immersive neural-linked virtual reality experiences that blur the line between digital and physical',
     financial_description: 'Next-generation financial tools and education designed to democratize wealth creation',
     design_description: '3D architectural and spatial design platform with real-time visualization and collaboration',
